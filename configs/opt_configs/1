@@ -1,0 +1,1 @@
+sgd lr=0.1 momentum=0.9 lr_factor=0.2 lr_factor_epoch=2,4,6 

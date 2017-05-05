@@ -1,0 +1,7 @@
+conv 
+pool
+fc
+act
+fc
+act
+out
