@@ -1,0 +1,19 @@
+conv kernel=(11,9) num_filter=128
+pool pool_type=max kernel=(1,4) stride=(1,4)
+flat
+norm eps=0.001 momentum=0.9 fix_gamma=True
+act
+fc num_hidden=1024
+norm eps=0.001 momentum=0.9 fix_gamma=True
+act
+fc num_hidden=1024
+norm eps=0.001 momentum=0.9 fix_gamma=True
+act
+fc num_hidden=1024
+norm eps=0.001 momentum=0.9 fix_gamma=True
+act
+fc num_hidden=512
+norm eps=0.001 momentum=0.9 fix_gamma=True
+act
+fc num_hidden=2831
+out

@@ -1,0 +1,24 @@
+conv kernel=(3,3) num_filter=64 pad=(1,1)
+act
+conv kernel=(3,3) num_filter=64 pad=(1,1)
+act
+pool pool_type=max kernel=(1,2) stride=(1,2)
+conv kernel=(3,3) num_filter=128 pad=(1,1)
+act
+conv kernel=(3,3) num_filter=128 pad=(1,1)
+act
+pool pool_type=max kernel=(1,2) stride=(1,2)
+conv kernel=(3,3) num_filter=256 pad=(1,1)
+act
+conv kernel=(3,3) num_filter=256 pad=(1,1)
+act
+pool pool_type=max kernel=(3,3), stride=(3,3)
+flat
+fc num_hidden=512
+act
+fc num_hidden=512
+act
+fc num_hidden=512
+act
+fc num_hidden=2831
+out name=softmax
