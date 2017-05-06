@@ -64,7 +64,7 @@ def fit(args, net, opt_name, opt_params):
 			initializer				= mx.init.Xavier(factor_type="in", magnitude=2.34),
 			kvstore					= kv,
 			batch_end_callback		= mx.callback.Speedometer(args.batch_size, 1000),
-			epoch_end_callback		= mx.callback.do_checkpoint(args.model_prefix),
+			epoch_end_callback		= mx.callback.do_checkpoint(args.model_dir),
 			**model_args)
 
 

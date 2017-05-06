@@ -12,6 +12,7 @@ parser.add_argument('--cv-dir', type=str, default='cv/',
                     help='the input validation data directory')
 parser.add_argument('--model-dir', type=str, default="models/",
                     help="load the model on an epoch using the model-prefix")
+
 parser.add_argument('--meanvar-file', type=str, default='meanvar_ndarray',
                     help='the mean variance file of train data')
 parser.add_argument('--gpus', type=str, default='0',

@@ -12,4 +12,5 @@ python controler.py \
 	--train-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/train		\
 	--cv-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/cv			\
 	--model-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/models		\
+	--num-classes	2831														\
 	--gpus			0,1,2,3
