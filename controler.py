@@ -35,6 +35,7 @@ lr_factor	= "0.1"
 lr_factor_epoch = "3,8"
 
 def lunch_test(lr_factor = "1", lr_factor_epoch = "1"):
+	print "starting training, test_id =", test_cnt
 	command = ("python train_speech.py" + 
 			" --model-dir "		+ args.model_dir	+ str(lunch_time) + '_' + str(test_cnt) + "/ "
 			" --train-dir "		+ args.train_dir	+
@@ -87,8 +88,6 @@ def file_format_check (net_index, opt_index):
 		print "testing net-opt pair : " + str(line)
 		sf = _sf()
 		of = _of()
-		net = sf(net_config)
-		net.infer_shape(data=(int(args.batch_size), 11, 3, 40), softmax_label = (int(args.batch_size),))
 		try:
 			net = sf(net_config)
 			net.infer_shape(data=(int(args.batch_size), 11, 3, 40), softmax_label = (int(args.batch_size),))
@@ -101,6 +100,9 @@ def file_format_check (net_index, opt_index):
 			raise Exception("compile file \"" + opt_filename + "\" failed, parameter name error?")
 		line += 1
 	print "check over, format check all passed"
+	print ""
+	print ""
+	print ""
 
 if "__main__" == __name__:
 	net_index = open("./configs/net_configs/index").readlines()

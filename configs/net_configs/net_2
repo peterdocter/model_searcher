@@ -1,0 +1,7 @@
+conv pad=(1,1)
+pool pad=(1,1) kernel=(1,4)
+fc
+act
+fc
+act
+out
