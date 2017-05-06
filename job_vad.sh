@@ -9,5 +9,5 @@ date
 #lstopo-no-graphics
 #$HADOOP_PREFIX/bin/hdfs dfs -rm /user/jianzhang/models/*
 
-./remote_exec.sh
+./remote_vad.sh
 
