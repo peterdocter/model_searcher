@@ -8,4 +8,8 @@ fi
 LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
-python controler.py
+python controler.py \
+	--train-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/train		\
+	--cv-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/cv			\
+	--model-dir		hdfs://yz-cpu-vm001.hogpu.cc/user/great_searcher/models		\
+	--gpus			0,1,2,3

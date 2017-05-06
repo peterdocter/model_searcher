@@ -12,12 +12,15 @@ class symbol_factory (object):
 
 		self.config_pool = {}
 		self.config_pool["conv"] = {
-				"kernel"	 : (11, 9),
+				"kernel"	 : (1, 1),
+				"stride"     : (1, 1),
+				"pad"		 : (0, 0),
 				"num_filter" : 128
 				}
 		self.config_pool["pool"] = {
-				"kernel"	 : (1, 4),
-				"stride"     : (1, 4),
+				"kernel"	 : (1, 1),
+				"stride"     : (1, 1),
+				"pad"		 : (0, 0),
 				"pool_type"  : "max"
 				}
 		self.config_pool["flat"] = {}
@@ -46,7 +49,9 @@ class symbol_factory (object):
 				params[key] = config[key]
 				print "warning :", layername, "didn`t get parameter", key
 				print "          use default", config[key]
-
+		if layername == "conv" or layername == "pool":
+			if params["stride"] != params["kernel"]:
+				print "warning : parameter stride != parameter kernel, ARE YOU SURE?"
 		return params
 
 	def decode (self, cmds):
@@ -101,8 +106,6 @@ class symbol_factory (object):
 			cnt += 1
 
 		self.output_symbol = tmp_symbol
-
-		self.output_symbol.save("./debug.json")
 
 if "__main__" == __name__:
 	sf = symbol_factory()

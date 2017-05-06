@@ -14,7 +14,7 @@
         "shape": "()", 
         "target_shape": "(0,11,3,40)"
       }, 
-      "name": "reshape0", 
+      "name": "reshape1", 
       "inputs": [[0, 0]], 
       "backward_source_id": -1
     }, 
@@ -25,21 +25,21 @@
         "dim1": "1", 
         "dim2": "2"
       }, 
-      "name": "nhcw2conv0", 
+      "name": "nhcw2conv1", 
       "inputs": [[1, 0]], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "convolution0_weight", 
+      "name": "convolution1_weight", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "convolution0_bias", 
+      "name": "convolution1_bias", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
@@ -53,12 +53,12 @@
         "num_filter": "128", 
         "num_group": "1", 
         "online_quanti": "False", 
-        "pad": "(0,0)", 
+        "pad": "(1,1)", 
         "stride": "(1,1)", 
         "transpose_weight": "True", 
         "workspace": "1024"
       }, 
-      "name": "convolution0", 
+      "name": "convolution1", 
       "inputs": [[2, 0], [3, 0], [4, 0]], 
       "backward_source_id": -1
     }, 
@@ -68,25 +68,25 @@
         "global_pool": "False", 
         "kernel": "(1,4)", 
         "legacy_shape": "False", 
-        "pad": "(0,0)", 
+        "pad": "(1,1)", 
         "pool_type": "max", 
-        "stride": "(1,4)"
+        "stride": "(1,1)"
       }, 
-      "name": "pooling0", 
+      "name": "pooling1", 
       "inputs": [[5, 0]], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "fullyconnected0_weight", 
+      "name": "fullyconnected2_weight", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "fullyconnected0_bias", 
+      "name": "fullyconnected2_bias", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
@@ -96,28 +96,28 @@
         "no_bias": "False", 
         "num_hidden": "1024"
       }, 
-      "name": "fullyconnected0", 
+      "name": "fullyconnected2", 
       "inputs": [[6, 0], [7, 0], [8, 0]], 
       "backward_source_id": -1
     }, 
     {
       "op": "Activation", 
       "param": {"act_type": "relu"}, 
-      "name": "activation0", 
+      "name": "activation2", 
       "inputs": [[9, 0]], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "fullyconnected1_weight", 
+      "name": "fullyconnected3_weight", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
     {
       "op": "null", 
       "param": {}, 
-      "name": "fullyconnected1_bias", 
+      "name": "fullyconnected3_bias", 
       "inputs": [], 
       "backward_source_id": -1
     }, 
@@ -127,14 +127,14 @@
         "no_bias": "False", 
         "num_hidden": "1024"
       }, 
-      "name": "fullyconnected1", 
+      "name": "fullyconnected3", 
       "inputs": [[10, 0], [11, 0], [12, 0]], 
       "backward_source_id": -1
     }, 
     {
       "op": "Activation", 
       "param": {"act_type": "relu"}, 
-      "name": "activation1", 
+      "name": "activation3", 
       "inputs": [[13, 0]], 
       "backward_source_id": -1
     }, 

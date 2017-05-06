@@ -42,20 +42,19 @@ from optimizer_factory import optimizer_factory as _of
 sf = _sf()
 of = _of()
 
-assert args.opt_config_name != "null"
-assert args.net_config_name != "null"	
-
 #check dirs
-try:
-	if "hdfs://" in args.model_dir:
-		child = subprocess.Popen("hdfs dfs -mkdir " + args.model_dir,shell = True)
-		return_code = child.wait()
-		if return_code != 0:
-			raise Exception("hdfs model dir exist, abort")
-	else:
+if "hdfs:" in args.model_dir:
+	print "making dir on hdfs"
+	child = subprocess.Popen("hdfs dfs -mkdir " + args.model_dir,shell = True)
+	return_code = child.wait()
+	if return_code != 0:
+		raise Exception("hdfs model dir exist or make dir error, abort")
+else:
+	try:
+		print "making dir on local server"
 		os.mkdirs(args.model_dir)
-except:
-	raise Exception("local model dir exist, abort")
+	except:
+		raise Exception("local model dir exist or make dir error, abort")
 
 #main code
 net_cmds = open("./.net_config").read()
