@@ -37,7 +37,7 @@ lr_factor_epoch = "3,8"
 def lunch_test(lr_factor = "1", lr_factor_epoch = "1"):
 	print "starting training, test_id =", test_cnt
 	command = ("python train_speech.py" + 
-			" --model-dir "		+ args.model_dir	+ str(lunch_time) + '_' + str(test_cnt) + "/ "
+			" --model-dir "		+ args.model_dir + '/' + str(lunch_time) + '_' + str(test_cnt) + "/ "
 			" --train-dir "		+ args.train_dir	+
 			" --cv-dir "		+ args.cv_dir		+
 			" --gpus "			+ args.gpus			+

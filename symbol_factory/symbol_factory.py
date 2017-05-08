@@ -49,7 +49,7 @@ class symbol_factory (object):
 				params[key] = config[key]
 				print "warning :", layername, "didn`t get parameter", key
 				print "          use default", config[key]
-		if layername == "conv" or layername == "pool":
+		if layername == "pool":
 			if params["stride"] != params["kernel"]:
 				print "warning : parameter stride != parameter kernel, ARE YOU SURE?"
 		return params

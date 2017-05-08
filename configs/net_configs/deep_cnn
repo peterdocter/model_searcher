@@ -12,7 +12,7 @@ conv kernel=(3,3) num_filter=256 pad=(1,1)
 act
 conv kernel=(3,3) num_filter=256 pad=(1,1)
 act
-pool pool_type=max kernel=(3,3), stride=(3,3)
+pool pool_type=max kernel=(3,3) stride=(3,3)
 flat
 fc num_hidden=512
 act
